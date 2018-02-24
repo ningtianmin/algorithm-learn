@@ -12,57 +12,73 @@ public class SortTest {
 
     @Test
     void selectionSort() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals( SortUtil.assertAscendArray(Sort.selectionSort(result)),true);
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("selectionSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.selectionSort(array)), true);
+        System.out.println(String.format("selectionSort result: %s", Arrays.toString(array)));
     }
 
     @Test
     void insertionSort() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals(SortUtil.assertAscendArray(Sort.insertionSort(result)),true);
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("insertionSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.insertionSort(array)), true);
+        System.out.println(String.format("insertionSort result: %s", Arrays.toString(array)));
     }
 
     @Test
     void optimizeInsertionSort() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals( SortUtil.assertAscendArray(Sort.optimizeInsertionSort(result)),true);
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("optimizeInsertionSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.optimizeInsertionSort(array)), true);
+        System.out.println(String.format("optimizeInsertionSort result: %s", Arrays.toString(array)));
     }
 
     @Test
     void mergeSort() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals(SortUtil.assertAscendArray(Sort.mergeSort(result,0,result.length-1)),true );
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("mergeSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.mergeSort(array, 0, array.length - 1)), true);
+        System.out.println(String.format("mergeSort result: %s", Arrays.toString(array)));
     }
 
     @Test
     void quickSortThreeWays() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals(SortUtil.assertAscendArray(Sort.quickSortThreeWays(result,0,result.length-1)),true );
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("quickSortThreeWays array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.quickSortThreeWays(array, 0, array.length - 1)), true);
+        System.out.println(String.format("quickSortThreeWays result: %s", Arrays.toString(array)));
     }
 
     @Test
     void quickSortTwoWays() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals(SortUtil.assertAscendArray(Sort.quickSortTwoWays(result,0,result.length-1)),true );
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("quickSortTwoWays array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.quickSortTwoWays(array, 0, array.length - 1)), true);
+        System.out.println(String.format("quickSortTwoWays result: %s", Arrays.toString(array)));
     }
 
     @Test
     void bubbleSort() {
-        int[] result = new int[DATA_NUM];
-        System.arraycopy(ARRAY,0,result,0,DATA_NUM);
-        Assert.assertEquals(SortUtil.assertAscendArray(Sort.bubbleSort(result)),true );
-        System.out.println(Arrays.toString(result));
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("bubbleSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.bubbleSort(array)), true);
+        System.out.println(String.format("bubbleSort result: %s", Arrays.toString(array)));
+    }
+
+    @Test
+    void heapSort() {
+        int[] array = new int[DATA_NUM];
+        System.arraycopy(ARRAY, 0, array, 0, DATA_NUM);
+        System.out.println(String.format("heapSort array: %s", Arrays.toString(array)));
+        Assert.assertEquals(SortUtil.assertAscendArray(Sort.heapSort(array, array.length - 1)), true);
+        System.out.println(String.format("heapSort result: %s", Arrays.toString(array)));
     }
 }

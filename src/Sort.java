@@ -63,7 +63,7 @@ public class Sort {
      * @param right inclusive
      */
     public static int[] mergeSort(int[] array, int left, int right) {
-        if(left>=right){
+        if (left >= right) {
             return array;
         }
         int mid = left + (right - left) / 2;
@@ -196,6 +196,32 @@ public class Sort {
                 }
             }
         }
+        return array;
+    }
+
+    /**
+     * heap sort
+     */
+    public static int[] heapSort(int[] array, int rightIndex) {
+        if (rightIndex < 1) {
+            return array;
+        }
+        int temp;
+        for (int position = (rightIndex - 1) / 2; position >= 0; position--) {
+            int biggerIndex = 2 * position + 1;
+            if (biggerIndex + 1 <= rightIndex && array[biggerIndex] < array[biggerIndex + 1]) {
+                biggerIndex++;
+            }
+            if (array[biggerIndex] > array[position]) {
+                temp = array[position];
+                array[position] = array[biggerIndex];
+                array[biggerIndex] = temp;
+            }
+        }
+        temp = array[rightIndex];
+        array[rightIndex] = array[0];
+        array[0] = temp;
+        heapSort(array, rightIndex - 1);
         return array;
     }
 }
